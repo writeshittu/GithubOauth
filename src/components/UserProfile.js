@@ -45,8 +45,8 @@ const UserProfile = () => {
       </div>
       <div className="hidden md:block">
         <p className="text-[1.2rem] my">{userDetails.data.name}</p>
-        <p className="text-[#24292f]">{userDetails.data.login}</p>
-        <p className="text-[#24292f]">{userDetails.data.bio}</p>
+        <p className="text-[#24292f] text-[.9rem]">{userDetails.data.login}</p>
+        <p className="text-[#24292f] text-[.9rem]">{userDetails.data.bio}</p>
       </div>
       {/* <div> */}
       <button className="bg-gray-600 w-full py-1 rounded-md my-3 border px-4 text-[#24292f]  bg-opacity-10">
@@ -83,22 +83,22 @@ const UserProfile = () => {
           </p>
         )}
       </div>
-      <div className="border-b ">
+      {/* <div className="border-b ">
         <p className="my-4 text-[.9rem] text-[#24292f] font-bold">
           Achievements
         </p>
         <div className="mb-4 text-[.8rem]">
           <ShieldExclamationIcon width={100} className="inline" />
         </div>
-      </div>
-      <div className="hidden md:block ">
+      </div> */}
+      {/* <div className="hidden md:block ">
         <p className="my-4 text-[.9rem] text-[#24292f] font-bold">
           Organizations
         </p>
         <div className="mb-4 text-[.8rem]">
           <ShieldExclamationIcon width={100} className="inline" />
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -10,6 +10,7 @@ import { getRepos } from "../Slices/repoSlice";
 const UserPage = () => {
   const dispatch = useDispatch();
   const userRepos = useSelector((state) => state.userRepository);
+  const userDetails = useSelector((state) => state.userProfile);
   console.log("repos", userRepos);
 
   useEffect(() => {
@@ -17,7 +18,8 @@ const UserPage = () => {
       dispatch(getRepos());
     }
   }, [dispatch, userRepos.status]);
-
+  if (userDetails.status === "loading")
+    return <div className="flex items-center justify-center">Loding</div>;
   return (
     <div>
       <NavBar />

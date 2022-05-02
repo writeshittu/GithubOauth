@@ -7,10 +7,10 @@ const RepositoryCard = ({ repoDetail }) => {
   return (
     <div className="flex justify-between py-6 md:ml-4 items-center border-b">
       <div>
-        <p className="text-[#24282f]">
+        <p className="text-[#0969da] font-bold ">
           {repoDetail.name}
-          <span className=" border ml-1 px-2 py-[.15rem] rounded-full">
-            {repoDetail.private ? "Private" : "public"}
+          <span className=" border ml-1 px-2 py-[.15rem] text-[.75rem] text-[#24292f] rounded-full">
+            {repoDetail.private ? "Private" : "Public"}
           </span>
         </p>
         <div className="flex mt-3 text-[#24282f] text-[.85rem]">
