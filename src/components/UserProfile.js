@@ -6,7 +6,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { LinkIcon, ShieldExclamationIcon } from "@heroicons/react/solid";
 import React, { useEffect } from "react";
-import { getUsers, selectAllState } from "../Slices/userSlice";
+import { getUsers } from "../Slices/userSlice";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
@@ -16,9 +16,8 @@ const UserProfile = () => {
   useEffect(() => {
     if (userDetails.status === "idle") {
       dispatch(getUsers());
-      console.log("sdsaqaq");
     }
-  }, []);
+  }, [userDetails.status, dispatch]);
 
   if (!userDetails.data) return <div>loading</div>;
 

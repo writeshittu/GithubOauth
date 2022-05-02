@@ -1,10 +1,5 @@
 import { ChevronDownIcon, StarIcon } from "@heroicons/react/outline";
 import { DotsCircleHorizontalIcon } from "@heroicons/react/solid";
-import sub from "date-fns/sub";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getRepos } from "../Slices/repoSlice";
-// import Dropdown from "./dropdown";
 
 const RepositoryCard = ({ repoDetail }) => {
   // const lastUpdatedDate = sub(new Date(repoDetail.updated_at));

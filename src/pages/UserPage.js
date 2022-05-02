@@ -15,9 +15,8 @@ const UserPage = () => {
   useEffect(() => {
     if (userRepos.status === "idle") {
       dispatch(getRepos());
-      console.log("reoer");
     }
-  }, []);
+  }, [dispatch, userRepos.status]);
 
   return (
     <div>
