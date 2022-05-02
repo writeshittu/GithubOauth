@@ -19,7 +19,10 @@ const Footer = () => {
       <div className="md:flex items-center py-8 border-t">
         <ul className="md:hidden ">
           {footerItem.map((item) => (
-            <li className="mx-1 md:mx-3 inline text-[#0969da] text-[.75rem]">
+            <li
+              key={item.id}
+              className="mx-1 md:mx-3 inline text-[#0969da] text-[.75rem]"
+            >
               {item.name}
             </li>
           ))}
@@ -35,7 +38,10 @@ const Footer = () => {
         </div>
         <ul className="hidden md:block">
           {footerItem.map((item) => (
-            <li className="mx-1 md:mx-3 inline text-[#0969da] text-[.75rem]">
+            <li
+              key={item.id}
+              className="mx-1 md:mx-3 inline text-[#0969da] text-[.75rem]"
+            >
               {item.name}
             </li>
           ))}

@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Tabs from "../components/tabs";
 import RepoSearchInput from "../components/SearchInput";
 import RepositoryCard from "../components/RepositoryCard";
 import UserProfile from "../components/UserProfile";
 import Footer from "../components/footer";
+import { useDispatch, useSelector } from "react-redux";
+import { getRepos } from "../Slices/repoSlice";
 const UserPage = () => {
+  const dispatch = useDispatch();
+  const userRepos = useSelector((state) => state.userRepository);
+  console.log("repos", userRepos);
+
+  useEffect(() => {
+    if (userRepos.status === "idle") {
+      dispatch(getRepos());
+      console.log("reoer");
+    }
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -22,7 +35,9 @@ const UserPage = () => {
         <div className="w-full">
           <div className=" w-full self-center">
             <RepoSearchInput />
-            <RepositoryCard />
+            {userRepos?.repos?.map((repo) => (
+              <RepositoryCard repoDetail={repo} />
+            ))}
             <div className="text-center my-4">
               <button className="bg-[#f6f8fa] hover:bg-[#0969da] text-[#0969da] border hover:text-[#fff] py-1 px-2 rounded-l ">
                 Previous

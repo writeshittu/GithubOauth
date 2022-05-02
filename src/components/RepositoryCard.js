@@ -1,14 +1,22 @@
 import { ChevronDownIcon, StarIcon } from "@heroicons/react/outline";
 import { DotsCircleHorizontalIcon } from "@heroicons/react/solid";
+import sub from "date-fns/sub";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRepos } from "../Slices/repoSlice";
 // import Dropdown from "./dropdown";
 
-const RepositoryCard = () => {
+const RepositoryCard = ({ repoDetail }) => {
+  // const lastUpdatedDate = sub(new Date(repoDetail.updated_at));
+  // console.log(lastUpdatedDate, "lkjh");
   return (
-    <div className="flex justify-between py-6 items-center border-b">
+    <div className="flex justify-between py-6 md:ml-4 items-center border-b">
       <div>
         <p className="text-[#24282f]">
-          Coding-brosters-2019{" "}
-          <span className=" border px-2 py-[.15rem] rounded-full">public</span>
+          {repoDetail.name}
+          <span className=" border ml-1 px-2 py-[.15rem] rounded-full">
+            {repoDetail.private ? "Private" : "public"}
+          </span>
         </p>
         <div className="flex mt-3 text-[#24282f] text-[.85rem]">
           <DotsCircleHorizontalIcon
@@ -16,8 +24,8 @@ const RepositoryCard = () => {
             color="yellow"
             width={18}
           />{" "}
-          <span>Javascript</span>
-          <span className="ml-3"> yesterday</span>
+          <span>{repoDetail.language}</span>
+          <span className="ml-3"> updated on {repoDetail.updated_at} </span>
         </div>
       </div>
       <div>
